@@ -1,0 +1,12 @@
+<div data-drag="true" data-jqyoui-draggable="{animate:true}" class="addedToDoTasks" ng-repeat="todoTask in todoTasks">
+    <div class="taskBoard">
+        <div class="toDoTask">{{todoTask.title}}</div>
+        <div class="toDoOwner">- {{todoTask.owner}}</div>
+    </div>
+</div>
+<div class="taskPrototype" ng-show="task.title">
+    <div class="taskBoard">
+        <div class="toDoTask">{{task.title}}</div>
+        <div class="toDoOwner">- {{task.owner}}</div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+<link rel="stylesheet" href="../css/style.css">
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.min.js" defer></script>
+<script type="text/javascript" src="../bower_components/angular-dragdrop.min.js" defer></script>
+<script type="text/javascript" src="../js/app.js" defer></script>
+
+<body ng-app="dashboard">
+    <div class="container">
+        <!-- this section contains top headings and button -->
+        <section class="headerContents"></section>
+        <!-- this section contains task and their status -->
+        <section class="mainContents">
+            <div ng-controller="TaskCtrl" class="taskController">
+                <div class="" id="addTask">
+                    <div class="colHeading"> Master List</div>
+                    <div id="taskBox">
+                        <div id="taskAdder">Add a task:</div>
+                        <form name = "frm">
+                        <div>
+                            <textarea name="taskTitle" id="textData" rows="5" ng-model="task.title" required></textarea>
+                        </div>
+                        <div>
+                            <input id = "owner" type="text" name="owner" ng-model="task.owner">
+                        </div>
+                        <button ng-disabled = "frm.$invalid" class="btn" ng-click="addTask(task)">Add Title!</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="" id="startStatus">
+                    <div class="colHeading">To Do List</div>
+                    <starttask></starttask>
+                </div>
+                <div class="" id="progressStatus" data-drop="true" qyoui-droppable="{beforeDrop: 'beforeDrop'}">
+                    <div class="colHeading">In Progress</div>
+                </div>
+                <div class="" id="finishStatus" data-drop="true" qyoui-droppable="{beforeDrop: 'beforeDrop'}">
+                    <div class="colHeading">Done</div>
+                </div>
+            </div>
+        </section>
+        <!-- this section contains footer and recycle bin  -->
+        <section class="footerContents">
+            <div></div>
+            <div></div>
+        </section>
+    </div>
+</body>
+
+</html>
